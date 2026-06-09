@@ -1,6 +1,6 @@
 import type { AuthUser, Branch, UserAccount, Order, OrderItem, InventoryItem, Shift, SalesSummary, HQAnalytics, MenuItem } from "./types";
 
-const BASE = "http://localhost:4000/api";
+const BASE = (import.meta.env.VITE_API_URL ?? "http://localhost:4000") + "/api";
 
 class ApiError extends Error {
   constructor(public status: number, message: string) {
